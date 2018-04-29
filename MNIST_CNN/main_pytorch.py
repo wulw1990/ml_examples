@@ -6,6 +6,19 @@ import torch.nn.functional as F
 import torch.optim as optim
 from torch.autograd import Variable
 
+## pytorch 安装 ----------------------------------------------------------------
+'''
+建议采用conda环境来管理python以及组件的版本。
+https://conda.io/miniconda.html
+
+pytorch目前支持linux, mac, windows平台，安装方法见官网。
+http://pytorch.org/
+
+例如，对于windows平台+conda环境+python3.6+CPU，安装方法为：
+conda install pytorch-cpu -c pytorch 
+pip3 install torchvision
+'''
+
 ## 初始化Transform --------------------------------------------------------------
 '''
 Transform一般用于对数据进入模型前进行一些预处理，比如：归一化（减均值除方差）、resize、RGB2GRAY等。
