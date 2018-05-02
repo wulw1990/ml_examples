@@ -67,12 +67,12 @@ def main(unused_argv):
     https://www.tensorflow.org/api_docs/python/tf/train/LoggingTensorHook
     '''
     tensors_to_log = {"probabilities": "softmax_tensor"}
-    tensors_to_log = {}
+    tensors_to_log = {} # 为了简介，这里设置为空
     logging_hook = tf.train.LoggingTensorHook(
         tensors=tensors_to_log,
         every_n_iter=50)
 
-    # Train the model
+    # 模型训练 ------------------------------------------------------------------
     train_input_fn = tf.estimator.inputs.numpy_input_fn(
         x={"x": train_data},
         y=train_labels,
@@ -84,8 +84,7 @@ def main(unused_argv):
         steps=2000,
         hooks=[logging_hook])
 
-
-    # Evaluate the model and print results
+    # 模型测试 ------------------------------------------------------------------
     eval_input_fn = tf.estimator.inputs.numpy_input_fn(
         x={"x": eval_data},
         y=eval_labels,
