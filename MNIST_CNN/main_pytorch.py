@@ -1,3 +1,28 @@
+## PyTorch 简介安装 -------------------------------------------------------------
+'''
+PyTorch优点：
+    1，动态图
+    2，Tensor Numpy互转
+    3，pythonic
+    4，debug方便
+    5，可读性强
+    6，上手快，适合research
+    7，轻量级
+    PyTorch和keras一样的易于上手，但是避免了keras对具体细节的屏蔽导致的调试和研究的困难。
+
+安装Conda:
+    建议采用conda环境来管理python以及组件的版本。
+    https://conda.io/miniconda.html
+
+安装PyTorch
+    pytorch目前支持linux, mac, windows平台，安装方法见官网。
+    http://pytorch.org/
+
+    对于windows平台+conda环境+python3.6+CPU，安装方法为：
+    conda install pytorch-cpu -c pytorch
+    pip3 install torchvision
+'''
+
 import torchvision
 import torch
 from torchvision import datasets, transforms
@@ -5,19 +30,6 @@ import torch.nn as nn
 import torch.nn.functional as F
 import torch.optim as optim
 from torch.autograd import Variable
-
-## pytorch 安装 ----------------------------------------------------------------
-'''
-建议采用conda环境来管理python以及组件的版本。
-https://conda.io/miniconda.html
-
-pytorch目前支持linux, mac, windows平台，安装方法见官网。
-http://pytorch.org/
-
-例如，对于windows平台+conda环境+python3.6+CPU，安装方法为：
-conda install pytorch-cpu -c pytorch 
-pip3 install torchvision
-'''
 
 ## 初始化Transform --------------------------------------------------------------
 '''

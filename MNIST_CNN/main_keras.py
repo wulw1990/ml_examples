@@ -37,9 +37,6 @@ from keras.layers import Conv2D, MaxPooling2D
 from keras import backend as K
 
 
-
-# input image dimensions
-
 ## 初始化Dataset ----------------------------------------------------------------
 '''
 keras.datasets提供的mnist模块非常方便，他会在首次使用时自动下载数据集。
