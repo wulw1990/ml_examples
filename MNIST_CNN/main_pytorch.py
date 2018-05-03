@@ -23,8 +23,9 @@ PyTorch优点：
     pip3 install torchvision
 '''
 
-import torchvision
+import sys
 import torch
+import torchvision
 from torchvision import datasets, transforms
 import torch.nn as nn
 import torch.nn.functional as F
@@ -85,9 +86,11 @@ data_test = datasets.MNIST(root="./data/",
 
 print('samples train:', len(data_train))
 print('samples test:', len(data_test))
+sys.stdout.flush()
 image, label = data_test[0]
 print('image size:', image.shape)
 print('label:', label)
+sys.stdout.flush()
 
 
 ## 初始化DataLoader -------------------------------------------------------------
@@ -199,6 +202,7 @@ for epoch in range(10):
         if (batch_idx+1) % 100 == 0 or (batch_idx+1) == len(data_loader_train):
             print('==>>> epoch: {}, batch index: {}, train loss: {:.6f}'.
                 format(epoch, batch_idx+1, loss))
+            sys.stdout.flush()
 
     # 为了方便知道训练的进度，没一轮(epoch)训练完，进行一次测试
     model.eval()
@@ -213,3 +217,5 @@ for epoch in range(10):
         correct_cnt += (pred_label == target.data).sum()
     print('==>>> epoch: {}, acc: {:.3f}%'.format(
         epoch, float(correct_cnt) / total_cnt * 100))
+    sys.stdout.flush()
+
